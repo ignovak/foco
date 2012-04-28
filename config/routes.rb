@@ -1,5 +1,8 @@
 Foco::Application.routes.draw do  root :to => 'projects#index'
   
+  get 'login' => 'sessions#new'
+  get 'logout' => 'sessions#destroy'
+
   resources :projects
   resources :users
   resources :sessions
