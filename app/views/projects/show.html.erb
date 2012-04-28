@@ -13,4 +13,11 @@
   <%= @project.description %>
 </p>
 
+<h3>Reviews</h3>
+<ul>
+  <% @project.reviews.each_with_index do |r, i| %>
+    <li>Review #<%= i %> by <%= r.user.name %></li>
+  <% end %>
+</ul>
+
 <%= link_to 'Add review', new_project_review_path(@project) %>
