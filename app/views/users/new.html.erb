@@ -2,7 +2,7 @@
 <section class="login_section">
     <h1 class="login_header">Sign up</h1>
 
-<%= form_for @user, html: { class: 'login_form' } do |f| %>
+<%= form_for @user, html: { class: 'login_form', id: 'login_form' } do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -17,12 +17,14 @@
 
   <div class="login_input_box">
     <%= f.label :name, class: "input_box_label" %>
-    <%= f.text_field :name, id: "login_name", autofocus: "autofocus" %>
+    <%= f.text_field :name, id: "login_name" %>
   </div>
+
   <div class="login_input_box">
     <%= f.label :email, class: "input_box_label" %>
     <%= f.text_field :email %>
   </div>
+
   <%= f.submit class: "login_button button big" %>
 <% end %>
 
