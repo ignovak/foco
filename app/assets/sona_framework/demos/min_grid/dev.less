@@ -1,0 +1,72 @@
+
+// setup vertical rhythm
+@base_fs: 16px;
+@rhythm: 21px;
+
+
+// Load Sona framework
+@setup_framework_path: "../../css/sona";
+@import "../../css/sona/util/install";
+@import "../../css/sona/sgrid/install";
+@import "../../css/sona/rhythm/install";
+@import "../../css/sona/shortcuts";
+
+.sgrid_setup(960px, 12, 20px);
+
+body {
+  .sgrid;
+
+  header,
+  section,
+  footer {
+    .row;
+    border-bottom: 2px dotted black;
+  }
+
+  header{
+    h1{
+      .col(12);
+    }
+  }
+
+  section {
+    article {
+      .col(8);
+      .fl;
+    }
+    aside {
+      .col(4);
+      .fl;
+    }
+  }
+
+  footer {
+    .popular{
+      .unit(3);
+      padding: 1em;
+      box-sizing: border-box;
+
+      .fl;
+      margin-top: 1em;
+
+      h1 {
+      	.row;
+      }
+
+      h2 {
+      	border-radius: 10px;
+        border: 1px solid #999;
+        border-top: 3px solid green;
+        .step(5);
+      }
+    }
+
+    .p1{
+      .shift_right(3);
+    }
+    .p2 {
+      .shitf_left(3);
+    }
+  }
+}
+

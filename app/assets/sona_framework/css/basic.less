@@ -1,0 +1,25 @@
+@rhythm: 21px; // setup vertical rhythm—line-height for entire website
+@base_fs: 14px; // setup base font size
+
+// Load Sona framework
+@setup_framework_path: "../css/sona";
+@import "sona/util/install";
+@import "sona/sgrid/install";
+@import "sona/rhythm/install";
+@import "sona/reset/install";
+@import "sona/type/install";
+@import "sona/shortcuts.less"; // here useful mixins and description of entire mixins in Sona framework
+
+.normalize; // normalize css or
+// .reset_yui;
+// .reset_meyer;
+// .reset_html5doctor;
+
+
+
+@import "type.less"; // here type related styles
+@import "layout.less"; // here layout and grid related styles
+
+@import "debug.less";
+
+
