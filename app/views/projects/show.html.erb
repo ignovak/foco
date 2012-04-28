@@ -11,6 +11,13 @@
     </section>
     <section class="project_details_reviewers">
         <h2>Revievers</h2>
+<h3>Reviews</h3>
+<ul>
+  <% @project.reviews.each_with_index do |r, i| %>
+    <li>Review #<%= i %> by <%= r.user.name %></li>
+  <% end %>
+</ul>
+
         <%= link_to 'Add review', new_project_review_path(@project) %>
         <ul class="reviewers_list">
             <li><a href="#">Vasya</a></li>
