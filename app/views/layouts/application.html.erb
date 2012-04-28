@@ -18,6 +18,12 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+<section class="login_promo">
+    <div class="login_logo">Foco</div>
+    <div class="login_advantages">
+        <p>autrors advantages here</p>
+        <p>description for revievers</p>
+    </div>
     <% if current_user %>
       Hi, <%= current_user.name %>
       <%= link_to 'Log out', logout_path %>
@@ -26,6 +32,7 @@
     <% end %>
 
     <div id='notice'><%= flash.now[:notice] %></div>
+</section>
 
     <%= yield %>
 
