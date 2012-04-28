@@ -1,3 +1,8 @@
+== Foco
+Focus group tessting for hackathon projects.
+Build at DOU hackathon Kyiv 28 april 2012.
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
