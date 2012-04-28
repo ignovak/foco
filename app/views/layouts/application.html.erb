@@ -21,8 +21,13 @@
   <body>
 
       <% if current_user %>
-        Hi, <%= current_user.name %>
-        <%= link_to 'Log out', logout_path %>
+        <div class="main_header_wrapper">
+            <header class="main_header">
+                <div class="main_logo">Foco</div>
+                Hi, <%= current_user.name %>
+                <%= link_to 'Log out', logout_path %>
+            </header>
+        </div>
       <% else %>
         <section class="login_promo">
           <div class="login_logo">Foco</div>
