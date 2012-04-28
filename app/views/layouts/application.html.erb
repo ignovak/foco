@@ -5,6 +5,16 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag params[:controller] %>
+    <script src="/sona_framework/js/sona/css.js"></script>
+    <script src="/sona_framework/js/libs/less-1.3.0.js"></script>
+    <script src="/sona_framework/js/libs/prefixfree.min.js"></script>
+    <!-- link to enable auto styles refresh -->
+    <%#<script src="/sona_framework/js/sona/less-watch.js"></script>%>
+    <script src="/sona_framework/js/sona/grid_button.js"></script>
+    <!-- include main dev.less file -->
+    <script>
+        css.load('/sona_framework/css/basic.less', 'stylesheet/less', 'dev_css');
+    </script>
     <%= csrf_meta_tags %>
   </head>
   <body>
