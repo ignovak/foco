@@ -1,0 +1,29 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+
+// to fix text resizing of IE6 and IE7
+  .type_body();
+
+// (opt) type h1 tag size here and Sona framework will calculate other h2 - h6 according to progressive scale, or delete it, so headings sizes will be set by default
+  .type_headers(28px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, serif;
+  margin: @rhythm 0;
+  font-weight: normal;
+}
+
+p {
+  margin: @rhythm 0;
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'WebSymbolsRegular';
+  src: url('/fonts/websymbols-regular-webfont.eot');
+  src: url('/fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/websymbols-regular-webfont.woff') format('woff'),
+       url('/fonts/websymbols-regular-webfont.ttf') format('truetype'),
+       url('/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+}
