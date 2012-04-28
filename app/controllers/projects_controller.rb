@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   # GET /projects/new.json
   def new
-    @project = Project.new
+    @project = current_user.projects.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(params[:project])
+    @project = current_user.projects.build(params[:project])
 
     respond_to do |format|
       if @project.save

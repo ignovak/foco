@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+
 <p>
   <b>Name:</b>
   <%= @project.name %>
@@ -10,6 +13,4 @@
   <%= @project.description %>
 </p>
 
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Add review', new_project_review_path(@project) %>
