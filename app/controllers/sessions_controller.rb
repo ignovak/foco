@@ -8,8 +8,11 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user
       session[:user_id] = user.id
+      redirect_to root_path
+    else
+      flash[:notice] = "Email not found"
+      render :new
     end
-    redirect_to root_path
   end
 
   def destroy

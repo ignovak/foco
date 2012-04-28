@@ -14,6 +14,8 @@
       <%= link_to 'Sign up', new_user_path %>
     <% end %>
 
+    <div id='notice'><%= flash.now[:notice] %></div>
+
     <%= yield %>
 
   </body>
