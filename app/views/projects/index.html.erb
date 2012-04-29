@@ -1,25 +1,32 @@
-<h1>Listing projects</h1>
+<div class="project_list_wrapper">
+    <%= link_to 'New Project', new_project_path, class: "add_project_button" %>
+    <button class="add_project_button">Add project</button>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name %></td>
-    <td><%= project.description %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Project', new_project_path %>
+    <div class="project_list_search">
+        <form action="">
+            <input name="" type="text" onfocus="if(this.value=='Search')this.value=''" onblur="if(this.value=='')this.value='Search'" value="Search">
+            <a href="#" onclick="$(this).parent().submit(); return false;">Search</a>
+        </form>
+    </div>
+    <nav class="project_list_nav">
+        <a href="#">All projects</a>
+        <a href="#">My projects</a>
+        <a href="#">To review</a>
+    </nav>
+    <ul class="project_list">
+    <% @projects.each do |project| %>
+      <tr>
+        <li>
+            <%= link_to 'Detail', project %>
+            <div class="project_list_interest">
+                test 98%
+            </div>
+            <h4><%= project.name %></h4>
+            <p><%= project.description %></p>
+            <%= link_to 'Edit', edit_project_path(project) %>
+            <%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %>
+            <%= link_to 'Add review', new_project_review_path(project) %>
+        </li>
+    <% end %>
+    </ul>
+</div>
