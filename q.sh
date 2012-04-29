@@ -2,8 +2,7 @@ while read line
 do
   if [ "$line" == "start" ]
   then
-    echo '1.23,1.23,1.23,1.23,1.23,1.23,1.23,1.23,1.23,1.23,1.23'
-    sleep 0.5
+    echo "$RANDOM,$RANDOM,$RANDOM,$RANDOM,$RANDOM,$RANDOM,$RANDOM,$RANDOM,$RANDOM,$RANDOM,$RANDOM"
   fi
 done
 

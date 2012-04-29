@@ -4,7 +4,9 @@ Foco::Application.routes.draw do  root :to => 'projects#index'
   get 'logout' => 'sessions#destroy'
 
   resources :projects do
-    resources :reviews
+    resources :reviews do
+      get 'data', on: :member
+    end
     member do
       get 'review'
       get 'start_review'
