@@ -12,4 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require infieldlabel.min
 // require_tree .
+
+$(function() {
+    var $form = $('#login_form');
+    $form.find('label').inFieldLabels();
+});

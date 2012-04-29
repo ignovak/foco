@@ -1,18 +1,16 @@
-<p id="notice"><%= notice %></p>
+  <div class="project_details">
+    <section class="project_details_description">
+          <h2><%= @project.name %> </h2>
+          <p><%= @project.description %></p>
+          <%= link_to 'Edit', edit_project_path(@project) %> |
+          <%= link_to 'Back', projects_path %>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-
-<p>
-  <b>Name:</b>
-  <%= @project.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @project.description %>
-</p>
-
+                <p id="notice"><%= notice %></p>
+          <div class="project_details_info">
+          </div>
+    </section>
+    <section class="project_details_reviewers">
+        <h2>Revievers</h2>
 <h3>Reviews</h3>
 <ul>
   <% @project.reviews.each_with_index do |r, i| %>
@@ -20,4 +18,17 @@
   <% end %>
 </ul>
 
-<%= link_to 'Add review', new_project_review_path(@project) %>
+        <%= link_to 'Add review', new_project_review_path(@project) %>
+        <ul class="reviewers_list">
+            <li><a href="#">Vasya</a></li>
+            <li><a href="#">Genrich_van_gumbelshtain</a></li>
+            <li><a href="#">Petya</a></li>
+            <li><a href="#">Name</a></li>
+            <li><a href="#">Name</a></li>
+            <li><a href="#">Name</a></li>
+            <li><a href="#">Name</a></li>
+            <li><a href="#">Name</a></li>
+        </ul>
+    </section>
+    <div class="project_details_chart"></div>
+  </div>

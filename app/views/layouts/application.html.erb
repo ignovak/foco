@@ -17,15 +17,29 @@
     </script>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <% if current_user %>
-      Hi, <%= current_user.name %>
-      <%= link_to 'Log out', logout_path %>
-    <% else %>
-      <%= link_to 'Sign up', new_user_path %>
-    <% end %>
 
-    <div id='notice'><%= flash.now[:notice] %></div>
+  <body>
+
+      <% if current_user %>
+        <div class="main_header_wrapper">
+            <header class="main_header">
+                <div class="main_logo">Foco</div>
+                Hi, <%= current_user.name %>
+                <%= link_to 'Log out', logout_path %>
+            </header>
+        </div>
+      <% else %>
+        <section class="login_promo">
+          <div class="login_logo">Foco</div>
+          <div class="login_advantages">
+              <p>autrors advantages here</p>
+              <p>description for revievers</p>
+          </div>
+            <%= link_to 'Sign up', new_user_path %>
+        </section>
+      <% end %>
+
+      <div id='notice'><%= flash.now[:notice] %></div>
 
     <%= yield %>
 
