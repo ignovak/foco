@@ -4,7 +4,8 @@ class ReviewsController < ApplicationController
   end
 
   def data
-    data = Review.find(params[:id]).review_data.select([:time, :attention]).map {|d| [d.time, d.attention]}
+    attrs = %w(time attention meditation)
+    data = Review.find(params[:id]).review_data.select(attrs).map &:attributes
     render json: data
   end
 end
