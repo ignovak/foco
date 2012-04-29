@@ -5,17 +5,23 @@ require File.expand_path('../application', __FILE__)
 Foco::Application.initialize!
 
 $record_on = false
-pig = IO.popen('bash q.sh', 'w+')
+pig = IO.popen('./focoTool', 'w+')
+# pig = IO.popen('bash q.sh', 'w+')
 
 Thread.new do
   loop do
     if $record_on
       pig.puts('start')
-      pig.puts("id:#{$review_id}")
+      pig.puts($review_id)
       data = pig.gets.strip
       puts data
       query = "INSERT INTO review_data (time,review_id,attention,meditation,delta,theta,alpha1,alpha2,beta1,beta2,gamma1,gamma2,signal_quality) values (#{$time},#{$review_id},#{data})"
-      ActiveRecord::Base.connection.execute(query) rescue "\n\n\nERROR\n\n\n"
+      puts query
+      begin
+        ActiveRecord::Base.connection.execute(query)
+      rescue
+        puts "\n\n\nERROR\n\n\n"
+      end
       $time += 0.5
       started = true
     else

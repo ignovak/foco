@@ -3,6 +3,8 @@ Foco::Application.routes.draw do  root :to => 'projects#index'
   get 'login' => 'sessions#new'
   get 'logout' => 'sessions#destroy'
 
+  get 'stop' => 'reviews#stop'
+
   resources :projects do
     resources :reviews
   end
