@@ -16,6 +16,5 @@
 // require_tree .
 
 $(function() {
-    var $form = $('#login_form');
-    $form.find('label').inFieldLabels();
+    var $form = $('#login_form label').inFieldLabels();
 });
