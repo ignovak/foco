@@ -4,4 +4,14 @@
 #plot {
   height: 300px;
   width: 600px;
+  .thumb {
+    bottom: 26px;
+    height: 36px;
+    width: 48px;
+    display: none;
+    position: absolute;
+  }
+  &:hover .thumb {
+    display: block;
+  }
 }

@@ -1,6 +1,7 @@
 <%= link_to "Get data", data_project_review_path(params[:project_id], params[:id]), id: 'data_link' %>
 <div class="project_review">
     <div id='plot'></div>
+    <div class='thumb' style="background-image: url('/Shared/<%= params[:id] %>.png')"></div>
 
     <div class="project_review_content">
         <iframe width="560" height="315" src="http://www.youtube.com/embed/kAG39jKi0lI" frameborder="0" allowfullscreen></iframe>
