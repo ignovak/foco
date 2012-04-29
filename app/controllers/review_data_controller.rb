@@ -1,0 +1,2 @@
+class ReviewDataController < ApplicationController
+end

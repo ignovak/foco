@@ -10,8 +10,10 @@ pig = IO.popen('bash q.sh', 'w+')
 Thread.new do
   loop do
     if $record_on
-      pig.write('start')
-      put_to_db(pig.gets)
+      pig.puts('start')
+      rec = pig.gets
+      puts rec
+      # put_to_db(pig.gets)
       started = true
     else
       if started
