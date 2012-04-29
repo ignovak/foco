@@ -7,6 +7,8 @@ $ ->
  
       else
         alert "Another review is now being performed. Wait, please."
+        $('#start_review').hide()
+        $('#stop_review').show()
       false
   $('#start_review').click()
 
