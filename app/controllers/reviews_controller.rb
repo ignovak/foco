@@ -3,16 +3,8 @@ class ReviewsController < ApplicationController
   def show
   end
 
-  def new
-    @project = Project.find(params[:project_id])
-    @review = @project.reviews.build
-  end
-
-  def create
-    review = current_user.reviews.create(params[:review])
-    $record_on = true
-    $time = 0
-    $review_id = review.id
-    redirect_to project_review_path(review.project_id, review.id)
+  def data
+    data = Review.find(params[:id]).review_data.select([:time, :attention]).map {|d| [d.time, d.attention]}
+    render json: data
   end
 end

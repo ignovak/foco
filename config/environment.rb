@@ -6,8 +6,8 @@ Foco::Application.initialize!
 
 $record_on = false
 $time = 0
-pig = IO.popen('./focoTool', 'w+')
-# pig = IO.popen('bash q.sh', 'w+')
+# pig = IO.popen('./focoTool', 'w+')
+pig = IO.popen('bash q.sh', 'w+')
 
 Thread.new do
   loop do
