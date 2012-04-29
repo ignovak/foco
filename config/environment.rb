@@ -11,9 +11,12 @@ Thread.new do
   loop do
     if $record_on
       pig.puts('start')
-      rec = pig.gets
-      puts rec
-      # put_to_db(pig.gets)
+      pig.puts("id:#{$review_id}")
+      data = pig.gets.strip
+      puts data
+      query = "INSERT INTO review_data (time,review_id,attention,meditation,delta,theta,alpha1,alpha2,beta1,beta2,gamma1,gamma2,signal_quality) values (#{$time},#{$review_id},#{data})"
+      ActiveRecord::Base.connection.execute(query) rescue "\n\n\nERROR\n\n\n"
+      $time += 0.5
       started = true
     else
       if started

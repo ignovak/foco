@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120428223512) do
+ActiveRecord::Schema.define(:version => 20120429012404) do
 
   create_table "projects", :force => true do |t|
     t.string   "name"
@@ -22,21 +22,19 @@ ActiveRecord::Schema.define(:version => 20120428223512) do
   end
 
   create_table "review_data", :force => true do |t|
-    t.integer  "time"
-    t.float    "attention"
-    t.float    "meditation"
-    t.float    "delta"
-    t.float    "theta"
-    t.float    "alpha1"
-    t.float    "alpha2"
-    t.float    "beta1"
-    t.float    "beta2"
-    t.float    "gamma1"
-    t.float    "gamma2"
-    t.float    "signal_quality"
-    t.integer  "review_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.integer "time"
+    t.float   "attention"
+    t.float   "meditation"
+    t.float   "delta"
+    t.float   "theta"
+    t.float   "alpha1"
+    t.float   "alpha2"
+    t.float   "beta1"
+    t.float   "beta2"
+    t.float   "gamma1"
+    t.float   "gamma2"
+    t.float   "signal_quality"
+    t.integer "review_id"
   end
 
   add_index "review_data", ["review_id"], :name => "index_review_data_on_review_id"
