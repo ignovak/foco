@@ -10,23 +10,14 @@
     </section>
     <section class="project_details_reviewers">
 
-        <%# <h3>Reviews</h3>
-        <%# <ul>
-        <%# <% @project.reviews.each_with_index do |r, i| %>
-        <%#     <li>Review #<%= i %> by <%= r.user.name %></li>
-        <%# <% end %>
-        <%# </ul>
-
-        <%# <% unless @project.user == current_user %>
-        <%#     <%= link_to 'Add review', review_project_path(@project) %>
-        <%# <% end %>
-
         <h2>Reviews</h2>
-        <%= link_to 'Add review', new_project_review_path(@project) %>
+        <% unless @project.user == current_user %>
+            <%= link_to 'Add review', review_project_path(@project) %>
+        <% end %>
 
         <ul class="reviewers_list">
           <% @project.reviews.each_with_index do |r, i| %>
-            <li>Review #<%= i %> by <%= r.user.name %></li>
+            <li><%= link_to "Review #{i} by #{r.user.name}", project_review_path(@project, r) %></li>
           <% end %>
         </ul>
     </section>
