@@ -1,4 +1,8 @@
 <%= form_for([:project, @review]) do |f| %>
+    <section class="start_review_section">
+        <h1><%= @review.project.name %></h1>
+        <p><%= @review.project.description %></p>
+
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -11,8 +15,7 @@
     </div>
   <% end %>
 
-  <%= f.hidden_field :project_id %>
-  <div class="actions">
-    <%= f.submit 'Start' %>
-  </div>
+         <%= f.hidden_field :project_id %>
+         <%= f.submit 'Start', class: "start_reviewing_button" %>
+        <div class="start_review_project_box">Video or project or music here</div>
 <% end %>

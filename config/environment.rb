@@ -5,8 +5,8 @@ require File.expand_path('../application', __FILE__)
 Foco::Application.initialize!
 
 $record_on = false
-pig = IO.popen('./focoTool', 'w+')
-# pig = IO.popen('bash q.sh', 'w+')
+# pig = IO.popen('./focoTool', 'w+')
+pig = IO.popen('bash q.sh', 'w+')
 
 Thread.new do
   loop do
