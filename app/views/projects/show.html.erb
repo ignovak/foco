@@ -5,9 +5,8 @@
         <%= link_to 'Edit', edit_project_path(@project) %> |
         <%= link_to 'Back', projects_path %>
 
-              <p id="notice"><%= notice %></p>
-        <div class="project_details_info">
-        </div>
+        <p id="notice"><%= notice %></p>
+        <div class="project_details_info"></div>
     </section>
     <section class="project_details_reviewers">
         <h2>Reviewers</h2>
@@ -19,7 +18,7 @@
         </ul>
 
         <% unless @project.user == current_user %>
-            <%= link_to 'Add review', new_project_review_path(@project) %>
+            <%= link_to 'Add review', review_project_path(@project) %>
         <% end %>
         <ul class="reviewers_list">
             <li><a href="#">Vasya</a></li>
