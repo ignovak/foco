@@ -1,4 +1,6 @@
 $ ->
   $.get $('#data_link').attr('href'), (data) ->
-    console.log data
-    $.plot($("#plot"), [ data ])
+    # OPTIMIZE
+    d1 = $.map data, (d) -> [[d.time, d.attention]]
+    d2 = $.map data, (d) -> [[d.time, d.meditation]]
+    $.plot($("#plot"), [ d1, d2 ])
