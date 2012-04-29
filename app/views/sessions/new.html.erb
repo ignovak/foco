@@ -1,12 +1,11 @@
+<section class="login_section">
+    <h1 class="login_header">Login</h1>
 
-    <section class="login_section">
-        <h1 class="login_header">Login</h1>
-
-        <%= form_tag sessions_path, class: "login_form", id: "login_form" do %>
-            <div class="login_input_box">
-                <%= label_tag :email, nil, class: "input_box_label" %>
-                <%= text_field_tag :email %>
-            </div>
-            <%= submit_tag 'Login', class: "login_button button big" %>
-        <% end %>
-    </section>
+    <%= form_tag sessions_path, class: "login_form", id: "login_form" do %>
+        <div class="login_input_box">
+            <%= label_tag :email, nil, class: "input_box_label" %>
+            <%= text_field_tag :email %>
+        </div>
+        <%= submit_tag 'Login', class: "login_button button big" %>
+    <% end %>
+</section>
