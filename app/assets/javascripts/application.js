@@ -13,9 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require infieldlabel.min
+//= require projekktor-1.0.14r44.min
 // require_tree .
 
 $(function() {
-    var $form = $('#login_form');
-    $form.find('label').inFieldLabels();
+    var $form = $('#login_form label').inFieldLabels();
 });

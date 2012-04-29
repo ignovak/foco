@@ -4,8 +4,12 @@
     <div class='thumb' style="background-image: url('/Shared/<%= params[:id] %>.png')"></div>
 
     <div class="project_review_content">
-        <iframe width="560" height="315" src="http://www.youtube.com/embed/kAG39jKi0lI" frameborder="0" allowfullscreen></iframe>
-        <div class="project_review_cam"></div>
+        <div class="project_review_cam">
+            <video id="camera" class="chat_video" poster="intro.png" title="This is camera video" width="320" height="240" id="player_a">
+        </div>
+
+        <video id="youtube" class="youtube_video" poster="intro.png" title="This is Projeck video" width="560" height="315" id="player_a">
+        </video>
     </div>
 </div>
 
