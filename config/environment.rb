@@ -22,11 +22,12 @@ Thread.new do
       rescue
         puts "\n\n\nERROR\n\n\n"
       end
-      $time += 0.5
       started = true
+      $time += 0.5
+      sleep 0.5
     else
       if started
-        pig.write('stop')
+        pig.puts('stop')
         started = false
       end
       sleep 0.1
