@@ -26,7 +26,7 @@
         <div class="main_header_wrapper">
             <header class="main_header">
                 <div class="main_logo"><a href="/">Foco</a></div>
-                Hi, <%= current_user.name %>
+                Hi, <%= current_user.name %> |
                 <%= link_to 'Log out', logout_path %>
             </header>
         </div>
@@ -40,8 +40,6 @@
             <%= link_to 'Sign up', new_user_path %>
         </section>
       <% end %>
-
-      <div id='notice'><%= flash.now[:notice] %></div>
 
     <%= yield %>
 
