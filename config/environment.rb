@@ -5,6 +5,7 @@ require File.expand_path('../application', __FILE__)
 Foco::Application.initialize!
 
 $record_on = false
+$time = 0
 pig = IO.popen('./focoTool', 'w+')
 # pig = IO.popen('bash q.sh', 'w+')
 
@@ -22,13 +23,13 @@ Thread.new do
       rescue
         puts "\n\n\nERROR\n\n\n"
       end
-      started = true
       $time += 0.5
       sleep 0.5
     else
-      if started
+      if $time > 0
+puts "\n\n\nstop\n\n"
         pig.puts('stop')
-        started = false
+        $time = 0
       end
       sleep 0.1
     end
