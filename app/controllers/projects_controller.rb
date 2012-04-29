@@ -80,4 +80,23 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def review
+    @project = Project.find(params[:id])
+  end
+
+  def start_review
+    return render json: { status: :forbidden } if $record_on
+
+    review = current_user.reviews.create project_id: params[:id]
+    $record_on = true
+    $review_id = review.id
+    render json: { status: :ok }
+  end
+
+  def stop_review
+    $record_on = false
+    render json: { status: :ok }
+  end
+
 end

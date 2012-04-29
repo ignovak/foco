@@ -15,9 +15,4 @@ class ReviewsController < ApplicationController
     $review_id = review.id
     redirect_to project_review_path(review.project_id, review.id)
   end
-
-  def stop
-    $record_on = false
-    head :ok
-  end
 end

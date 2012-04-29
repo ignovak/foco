@@ -1,6 +1,5 @@
 <div class="project_list_wrapper">
-    <%= link_to 'New Project', new_project_path, class: "add_project_button" %>
-    <button class="add_project_button">Add project</button>
+    <%= link_to 'Add project', new_project_path, class: "add_project_button" %>
 
     <div class="project_list_search">
         <form action="">
@@ -9,17 +8,17 @@
         </form>
     </div>
     <nav class="project_list_nav">
-      <a href="#">All projects</a>
-      <a href="#">My projects</a>
-      <a href="#">To review</a>
+        <a href="#">All projects</a>
+        <a href="#">My projects</a>
+        <a href="#">To review</a>
     </nav>
     <ul class="project_list">
     <% @projects.each do |project| %>
       <li>
         <% if project.user == current_user %>
-          <%= link_to 'Detail', project %>
+            <%= link_to 'Detail', project %>
         <% else %>
-          <%= link_to 'Add review', new_project_review_path(project) %>
+            <%= link_to 'Add review', review_project_path(project) %>
         <% end %>
         <div class="project_list_interest">test 98%</div>
         <h4><%= project.name %></h4>
